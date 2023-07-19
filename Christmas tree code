@@ -1,0 +1,64 @@
+# 导入turtle库
+import turtle
+
+# 设置屏幕大小
+screen = turtle.Screen()
+screen.setup(375, 700)
+
+# 获取画笔并设置一些属性：圆形、红色、快
+circle = turtle.Turtle()
+circle.shape('circle')
+circle.color('red')
+circle.speed('fastest')
+circle.up()            # 拾起画笔
+
+# 重新获取画笔
+square = turtle.Turtle()
+# 重新设置画笔属性：四方形、绿色、快
+square.shape('square')
+square.color('green')
+square.speed('fastest')
+square.up()          # 重新拾起画笔
+
+# 跳到指定坐标位置
+circle.goto(0, 280)
+circle.stamp()       # 复制当前图形
+
+k = 0
+for i in range(1, 13):
+    y = 30 * i
+for j in range(i-k):
+    x = 30 * j
+    square.goto(x, -y + 280)
+    square.stamp()
+    square.goto(-x, -y + 280)
+    square.stamp()
+
+if i % 4 == 0:
+    x = 30 * (j + 1)
+    circle.color('red')
+    circle.goto(-x, -y + 280)
+    circle.stamp()
+    circle.goto(x, -y + 280)
+    circle.stamp()
+    k += 3
+
+if i % 4 == 3:
+        x = 30 * (j + 1)
+        circle.color('yellow')
+        circle.goto(-x, -y + 280)
+        circle.stamp()
+        circle.goto(x, -y + 280)
+        circle.stamp()
+
+square.color('brown')
+for i in range(13, 17):
+    y = 30 * i
+    for j in range(2):
+        x = 30 * j
+        square.goto(x, -y + 280)
+        square.stamp()
+        square.goto(-x, -y + 280)
+        square.stamp()
+-----------------------------------
+python 圣诞树代码 python圣诞树代码复制手机
